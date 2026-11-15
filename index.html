@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nebula Gesture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="start">
+    <h1>Nebula Gesture</h1>
+    <p>Kendalikan ribuan partikel dengan gerakan tanganmu.</p>
+    <button id="startBtn">Nyalakan kamera</button>
+    <small id="status"></small>
+  </div>
+
+  <aside id="hud" hidden>
+    <div id="modeName">Nebula</div>
+    <ul class="guide" id="guide">
+      <li data-mode="0"><b>Kepal</b> hati</li>
+      <li data-mode="1"><b>Telunjuk</b> Saturnus</li>
+      <li data-mode="2"><b>Telunjuk+tengah</b> I LOVE YOU</li>
+      <li data-mode="4"><b>Jempol+telunjuk</b> pelukan</li>
+      <li data-mode="5"><b>5 jari</b> nebula</li>
+      <li data-mode="6"><b>Jempol</b> bunga</li>
+      <li data-mode="7"><b>Kelingking</b> memberi bunga &amp; pelukan</li>
+      <li data-mode="9"><b>Telunjuk+kelingking</b> kupu-kupu</li>
+      <li data-mode="10"><b>4 jari</b> lubang hitam</li>
+      <li data-mode="12"><b>Manis+kelingking</b> jalan bersama</li>
+      <li data-mode="13"><b>Jempol+kelingking</b> menari berdua</li>
+    </ul>
+
+    <small>Tanpa kamera? Klik daftar ini atau tekan panah kiri/kanan.</small>
+  </aside>
+
+  <video id="cam" playsinline muted></video>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
