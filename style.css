@@ -1,0 +1,39 @@
+:root {
+  --ink: #05060f;
+  --text: #e8ecff;
+  --dim: #7f88b5;
+  --accent: #6fb7ff;
+  --hot: #ff4d8d;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; background: var(--ink); color: var(--text);
+  font-family: "Space Grotesk", system-ui, sans-serif; overflow: hidden; }
+#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+
+#start { position: fixed; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px; text-align: center;
+  background: radial-gradient(circle at 50% 40%, rgba(20,30,80,.55), rgba(5,6,15,.92)); z-index: 5; padding: 24px; }
+#start h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); font-weight: 600; letter-spacing: -0.02em; }
+#start p { color: var(--dim); max-width: 36ch; }
+#startBtn { margin-top: 8px; padding: 14px 28px; border: 1px solid var(--accent);
+  background: transparent; color: var(--text); font: inherit; font-size: 1rem;
+  border-radius: 999px; cursor: pointer; transition: background .2s; }
+#startBtn:hover, #startBtn:focus-visible { background: rgba(111,183,255,.18); outline: none; }
+#status { color: var(--hot); min-height: 1.2em; max-width: 44ch; }
+
+#hud { position: fixed; left: 20px; top: 20px; z-index: 3; padding: 16px 18px;
+  background: rgba(8,10,24,.6); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.08); border-radius: 14px; min-width: 210px; max-height: calc(100vh - 40px); overflow-y: auto; }
+#hud[hidden] { display: none; }
+#modeName { font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
+.guide { list-style: none; padding: 0; display: grid; gap: 4px; margin-bottom: 10px; }
+.guide li { color: var(--dim); font-size: .85rem; padding: 3px 8px; border-radius: 6px; cursor: pointer; }
+.guide li b { color: var(--text); font-weight: 600; margin-right: 6px; }
+.guide li.on { background: rgba(111,183,255,.16); color: var(--text); }
+.sub { color: var(--dim); font-size: .75rem; margin: 2px 0 6px; padding-left: 8px; }
+#hud small { color: var(--dim); font-size: .75rem; }
+
+#cam { position: fixed; right: 16px; bottom: 16px; width: 200px; border-radius: 12px;
+  transform: scaleX(-1); opacity: .75; border: 1px solid rgba(255,255,255,.12); display: none; z-index: 3; }
+@media (max-width: 600px) { #cam { width: 110px; } #hud { min-width: 0; font-size: .9em; } }
+@media (prefers-reduced-motion: reduce) { #startBtn { transition: none; } }
